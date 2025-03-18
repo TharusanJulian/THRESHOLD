@@ -200,9 +200,15 @@ header {
     color: var(--primary);
 }
 
+/* Fixed navbar toggler positioning */
 .navbar-toggler {
     border: none;
     color: var(--white);
+    padding: 0.5rem;
+    position: absolute;
+    right: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
 }
 
 .navbar-toggler-icon {
@@ -1609,20 +1615,75 @@ header {
     color: #bbb;
 }
 
-/* Responsive Adjustments */
+/* Responsive Navbar Styles - Mobile Dropdown */
 @media (max-width: 991.98px) {
-    .navbar {
-        padding: 0.5rem 0;
+    .navbar-collapse {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        z-index: 1000;
+        padding: 0.5rem 1rem;
+        background-color: var(--dark);
     }
     
-    .navbar-collapse {
-        background-color: var(--dark);
-        padding: 1rem;
-        margin-top: 0.5rem;
-        border-radius: 5px;
+    .navbar-nav {
+        padding: 1rem 0;
+    }
+    
+    .navbar-nav .nav-item {
+        margin: 0.5rem 0;
+        text-align: center;
     }
     
     .navbar-nav .nav-link {
+        padding: 0.5rem 1rem;
+    }
+    
+    /* Position the buy now button centered */
+    .navbar-collapse .btn-primary {
+        margin: 1rem auto;
+        display: block;
+        width: fit-content;
+    }
+}
+
+/* Dashboard Header Responsive Fixes */
+@media (max-width: 767.98px) {
+    .dashboard-header {
+        flex-direction: column;
+        padding: 1.2rem 1rem;
+    }
+    
+    .dashboard-title {
+        margin-bottom: 1rem;
+        width: 100%;
+        text-align: center;
+    }
+    
+    .dashboard-nav {
+        width: 100%;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 5px;
+    }
+    
+    .nav-item {
+        margin-left: 0;
+        margin-right: 5px;
+        padding: 0.3rem 0.6rem;
+        font-size: 0.9rem;
+        text-align: center;
+    }
+    
+    .nav-item:last-child {
+        margin-right: 0;
+    }
+}
+
+/* Responsive Adjustments */
+@media (max-width: 991.98px) {
+    .navbar {
         padding: 0.5rem 0;
     }
     
@@ -1764,6 +1825,15 @@ header {
     
     .team-member-info {
         padding: 1rem; /* Reduced padding */
+    }
+    
+    .dashboard-nav {
+        gap: 2px;
+    }
+    
+    .nav-item {
+        font-size: 0.8rem;
+        padding: 0.3rem 0.4rem;
     }
 }
 
