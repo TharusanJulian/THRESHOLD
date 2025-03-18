@@ -1,0 +1,744 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>THRESHOLD - Continuous Lactate Monitoring</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="fixed-top">
+        <nav class="navbar navbar-expand-lg">
+            <div class="container">
+                <a class="navbar-brand" href="#">
+                    <div class="logo-container">
+                        <img src="logo.png" alt="THRESHOLD Logo" class="brand-logo">
+                        <span class="brand-text">THRESHOLD</span>
+                    </div>
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#features">Features</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#integration">Integrations</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#addons">Add-ons</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#dashboard">Dashboard</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.html#contact">Contact</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="team.html">Our Team</a>
+                        </li>
+                    </ul>
+                    <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ&ab_channel=RickAstley" target="_blank" class="btn btn-primary ms-lg-3">BUY NOW</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section with Modern Display -->
+    <section class="hero position-relative overflow-hidden">
+        <div class="hero-bg"></div>
+        <div class="hero-overlay"></div>
+        <div class="container position-relative">
+            <div class="row align-items-center min-vh-80">
+                <div class="col-lg-6 text-center text-lg-start mb-5 mb-lg-0">
+                    <h1 class="display-4 fw-bold mb-4">Continuous <span class="highlight">Lactate</span> Monitoring</h1>
+                    <p class="lead mb-4">
+                        THRESHOLD revolutionizes your training by providing real-time lactate threshold monitoring. 
+                        Train smarter, not harder with our wearable technology that integrates seamlessly with your favorite devices.
+                    </p>
+                    <div class="hero-buttons">
+                        <a href="#features" class="btn btn-primary btn-lg px-4 me-2">LEARN MORE</a>
+                        <a href="#dashboard" class="btn btn-outline-light btn-lg px-4">LIVE DEMO</a>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="modern-visualization">
+                        <div class="lactate-display">
+                            <div class="lactate-header">
+                                <h2>Lactate</h2>
+                            </div>
+                            <div class="lactate-value-container">
+                                <div class="gauge-visual">
+                                    <div class="gauge-needle" id="gauge-needle"></div>
+                                    <div class="gauge-dot"></div>
+                                </div>
+                                <div class="lactate-value">
+                                    <span id="lactate-number">3.5</span>
+                                    <span class="lactate-unit">mmol/L</span>
+                                </div>
+                            </div>
+                            <div class="lactate-metrics">
+                                <div class="metric">
+                                    <span class="metric-value">147 bpm</span>
+                                    <span class="metric-label">Heart Rate</span>
+                                </div>
+                                <div class="metric">
+                                    <span class="metric-value">4.0 mmol/L</span>
+                                    <span class="metric-label">Threshold</span>
+                                </div>
+                                <div class="metric">
+                                    <span class="metric-value">High</span>
+                                    <span class="metric-label">Intensity</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="features py-6 bg-light">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="section-title">Key Features</h2>
+                <div class="section-divider"></div>
+                <p class="section-subtitle">Discover how THRESHOLD can transform your training experience</p>
+            </div>
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="feature-card h-100">
+                        <div class="modern-feature-icon bg-dark">
+                            <div class="minimal-gauge">
+                                <div class="gauge-circle"></div>
+                                <div class="gauge-indicator"></div>
+                            </div>
+                        </div>
+                        <div class="feature-content">
+                            <h3>Real-Time Monitoring</h3>
+                            <p>Track your lactate levels continuously during workouts without invasive blood tests.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="feature-card h-100">
+                        <div class="modern-feature-icon bg-dark">
+                            <div class="wearable-img-container">
+                                <img src="laktatbilde.jpeg" alt="THRESHOLD armband" class="wearable-img">
+                            </div>
+                        </div>
+                        <div class="feature-content">
+                            <h3>Comfortable Wearable</h3>
+                            <p>Slim, lightweight design available as a watch, bracelet, or adhesive patch to suit your preference.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="feature-card h-100">
+                        <div class="modern-feature-icon bg-dark">
+                            <div class="integration-icon">
+                                <div class="arrow arrow-right"></div>
+                                <div class="arrow arrow-left"></div>
+                            </div>
+                        </div>
+                        <div class="feature-content">
+                            <h3>Smart Integration</h3>
+                            <p>Seamlessly connects with Garmin, Strava, and other popular fitness platforms.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Integration Section -->
+    <section id="integration" class="integration py-6 bg-white">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="section-title">Integrations</h2>
+                <div class="section-divider"></div>
+                <p class="section-subtitle">THRESHOLD works with your favorite devices and platforms</p>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-lg-10">
+                    <div class="partners">
+                        <a href="https://connect.garmin.com/" target="_blank" class="partner-link">
+                            <div class="partner">
+                                <img src="garminlogo.png" alt="Garmin">
+                                <div class="partner-name">Garmin</div>
+                            </div>
+                        </a>
+                        <a href="https://www.strava.com/" target="_blank" class="partner-link">
+                            <div class="partner">
+                                <img src="strava logo.png" alt="Strava">
+                                <div class="partner-name">Strava</div>
+                            </div>
+                        </a>
+                        <a href="https://www.apple.com/ios/health/" target="_blank" class="partner-link">
+                            <div class="partner">
+                                <img src="apple health logo.png" alt="Apple Health">
+                                <div class="partner-name">Apple Health</div>
+                            </div>
+                        </a>
+                        <a href="https://www.whoop.com/" target="_blank" class="partner-link">
+                            <div class="partner">
+                                <img src="whooplogo.png" alt="WHOOP">
+                                <div class="partner-name">WHOOP</div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Add-ons Section -->
+    <section id="addons" class="addons py-6 bg-light">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="section-title">Platform Add-ons</h2>
+                <div class="section-divider"></div>
+                <p class="section-subtitle">Seamlessly integrate your lactate data with leading fitness ecosystems</p>
+            </div>
+            <div class="row g-4">
+                <div class="col-lg-6">
+                    <div class="addon-card">
+                        <div class="addon-logo">
+                            <img src="garminapp.png" alt="Garmin Connect IQ" class="app-screenshot">
+                        </div>
+                        <div class="addon-content">
+                            <h3>Garmin Connect IQ</h3>
+                            <p>Our custom Garmin Connect IQ app integrates real-time lactate threshold data directly with your Garmin device.</p>
+                            <ul class="addon-features">
+                                <li>Real-time lactate data fields</li>
+                                <li>Custom alerts when approaching threshold</li>
+                                <li>Data synchronization with Garmin Connect</li>
+                            </ul>
+                            <a href="#" class="btn btn-outline-primary btn-sm">Download App</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="addon-card">
+                        <div class="addon-logo">
+                            <img src="appleapp.png" alt="Apple Health" class="app-screenshot">
+                        </div>
+                        <div class="addon-content">
+                            <h3>Apple Health Integration</h3>
+                            <p>The THRESHOLD app writes your lactate data directly to Apple Health, creating a comprehensive health profile.</p>
+                            <ul class="addon-features">
+                                <li>Background data synchronization</li>
+                                <li>Historical lactate trend analysis</li>
+                                <li>HealthKit compliant data storage</li>
+                            </ul>
+                            <a href="#" class="btn btn-outline-primary btn-sm">App Store</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="addon-card">
+                        <div class="addon-logo">
+                            <img src="whoopapp.webp" alt="WHOOP" class="app-screenshot">
+                        </div>
+                        <div class="addon-content">
+                            <h3>WHOOP Add-on</h3>
+                            <p>Combine THRESHOLD's lactate data with WHOOP's recovery metrics for the ultimate training optimization.</p>
+                            <ul class="addon-features">
+                                <li>Recovery score correlation</li>
+                                <li>Strain coach integration</li>
+                                <li>Sleep performance impact analysis</li>
+                            </ul>
+                            <a href="#" class="btn btn-outline-primary btn-sm">Connect Account</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="addon-card">
+                        <div class="addon-logo">
+                            <img src="corosapp.jpg" alt="COROS" class="app-screenshot">
+                        </div>
+                        <div class="addon-content">
+                            <h3>COROS Integration</h3>
+                            <p>View your lactate threshold metrics directly on your COROS watch. Real-time monitoring on your wrist.</p>
+                            <ul class="addon-features">
+                                <li>Custom data fields</li>
+                                <li>Training effect calculations</li>
+                                <li>EvoLab integration</li>
+                            </ul>
+                            <a href="#" class="btn btn-outline-primary btn-sm">Get Add-on</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Dashboard Preview -->
+    <section id="dashboard" class="dashboard py-6 bg-white">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="section-title">Smart Dashboard</h2>
+                <div class="section-divider"></div>
+                <p class="section-subtitle">Analyze your data with our intuitive dashboard</p>
+            </div>
+            <div class="dashboard-preview">
+                <div class="dashboard-container">
+                    <div class="dashboard-header">
+                        <div class="dashboard-title">THRESHOLD Analytics</div>
+                        <div class="dashboard-nav">
+                            <span class="nav-item active" data-tab="overview">Overview</span>
+                            <span class="nav-item" data-tab="history">History</span>
+                            <span class="nav-item" data-tab="insights">Insights</span>
+                            <span class="nav-item" data-tab="settings">Settings</span>
+                        </div>
+                    </div>
+                    
+                    <!-- Overview Tab Content -->
+                    <div class="dashboard-content">
+                        <div class="dashboard-tab active" id="overview-tab">
+                            <div class="dashboard-row">
+                                <div class="dashboard-card summary-card">
+                                    <h3>Today's Training</h3>
+                                    <div class="summary-stats">
+                                        <div class="summary-stat">
+                                            <div class="stat-value">42<span class="stat-unit">min</span></div>
+                                            <div class="stat-label">Duration</div>
+                                        </div>
+                                        <div class="summary-stat">
+                                            <div class="stat-value">3.8<span class="stat-unit">mmol/L</span></div>
+                                            <div class="stat-label">Avg Lactate</div>
+                                        </div>
+                                        <div class="summary-stat">
+                                            <div class="stat-value">156<span class="stat-unit">bpm</span></div>
+                                            <div class="stat-label">Avg HR</div>
+                                        </div>
+                                    </div>
+                                    <div class="training-details">
+                                        <div class="detail-row">
+                                            <span class="detail-label">Workout Type:</span>
+                                            <span class="detail-value">Morning Run</span>
+                                        </div>
+                                        <div class="detail-row">
+                                            <span class="detail-label">Start Time:</span>
+                                            <span class="detail-value">06:15 AM</span>
+                                        </div>
+                                        <div class="detail-row">
+                                            <span class="detail-label">Calories:</span>
+                                            <span class="detail-value">423 kcal</span>
+                                        </div>
+                                        <div class="detail-row">
+                                            <span class="detail-label">Training Effect:</span>
+                                            <span class="detail-value">3.6 (Improving)</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="dashboard-card chart-card">
+                                    <h3>Lactate Trend</h3>
+                                    <div class="chart-container">
+                                        <div class="lactate-chart">
+                                            <!-- Enhanced Stock-like Chart -->
+                                            <div class="chart-tooltip" id="chartTooltip"></div>
+                                            <div class="chart-line"></div>
+                                            <div class="threshold-line"></div>
+                                            
+                                            <!-- Chart Points -->
+                                            <div class="chart-point" style="left: 10%; bottom: 40%;" data-value="3.2" data-time="10:15"></div>
+                                            <div class="chart-point" style="left: 25%; bottom: 55%;" data-value="3.6" data-time="10:30"></div>
+                                            <div class="chart-point" style="left: 40%; bottom: 35%;" data-value="3.0" data-time="10:45"></div>
+                                            <div class="chart-point" style="left: 55%; bottom: 60%;" data-value="3.8" data-time="11:00"></div>
+                                            <div class="chart-point" style="left: 70%; bottom: 70%;" data-value="4.2" data-time="11:15"></div>
+                                            <div class="chart-point" style="left: 85%; bottom: 50%;" data-value="3.5" data-time="11:30"></div>
+                                        </div>
+                                    </div>
+                                    <div class="chart-legend">
+                                        <div class="legend-item">
+                                            <span class="legend-color lactate-color"></span>
+                                            <span>Lactate</span>
+                                        </div>
+                                        <div class="legend-item">
+                                            <span class="legend-color threshold-color"></span>
+                                            <span>Threshold</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="dashboard-row">
+                                <div class="dashboard-card zones-card">
+                                    <h3>Training Zones</h3>
+                                    <div class="zones-container">
+                                        <div class="zone">
+                                            <div class="zone-bar">
+                                                <div class="zone-fill" style="width: 15%"></div>
+                                            </div>
+                                            <div class="zone-label">Recovery</div>
+                                            <div class="zone-time">6 min</div>
+                                        </div>
+                                        <div class="zone">
+                                            <div class="zone-bar">
+                                                <div class="zone-fill" style="width: 25%"></div>
+                                            </div>
+                                            <div class="zone-label">Aerobic</div>
+                                            <div class="zone-time">11 min</div>
+                                        </div>
+                                        <div class="zone">
+                                            <div class="zone-bar">
+                                                <div class="zone-fill" style="width: 40%"></div>
+                                            </div>
+                                            <div class="zone-label">Tempo</div>
+                                            <div class="zone-time">17 min</div>
+                                        </div>
+                                        <div class="zone">
+                                            <div class="zone-bar">
+                                                <div class="zone-fill" style="width: 20%"></div>
+                                            </div>
+                                            <div class="zone-label">Threshold</div>
+                                            <div class="zone-time">8 min</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="dashboard-card map-card">
+                                    <h3>Route Map</h3>
+                                    <div class="map-placeholder">
+                                        <!-- Custom Oslo route with non-straight path -->
+                                        <div class="map-route"></div>
+                                        <div class="map-marker start" data-tooltip="Start: Frogner Park (0.0 km)"></div>
+                                        <div class="map-marker end" data-tooltip="End: Vigeland Museum (5.3 km)"></div>
+                                        <div class="map-labels">
+                                            <div class="map-start-label">Start</div>
+                                            <div class="map-end-label">Finish</div>
+                                        </div>
+                                    </div>
+                                    <div class="map-stats">
+                                        <div class="map-stat">
+                                            <span class="map-stat-value">5.3 km</span>
+                                            <span class="map-stat-label">Distance</span>
+                                        </div>
+                                        <div class="map-stat">
+                                            <span class="map-stat-value">152 m</span>
+                                            <span class="map-stat-label">Elevation</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- History Tab Content -->
+                        <div class="dashboard-tab" id="history-tab">
+                            <div class="dashboard-card">
+                                <h3>Your Recent Activities</h3>
+                                <table class="history-table">
+                                    <thead>
+                                        <tr>
+                                            <th>Date</th>
+                                            <th>Activity</th>
+                                            <th>Distance</th>
+                                            <th>Duration</th>
+                                            <th>Avg Lactate</th>
+                                            <th>Avg HR</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>March 15, 2025</td>
+                                            <td>Morning Run</td>
+                                            <td>5.3 km</td>
+                                            <td>42 min</td>
+                                            <td>3.8 mmol/L</td>
+                                            <td>156 bpm</td>
+                                        </tr>
+                                        <tr>
+                                            <td>March 13, 2025</td>
+                                            <td>Interval Training</td>
+                                            <td>8.1 km</td>
+                                            <td>56 min</td>
+                                            <td>4.2 mmol/L</td>
+                                            <td>168 bpm</td>
+                                        </tr>
+                                        <tr>
+                                            <td>March 11, 2025</td>
+                                            <td>Easy Run</td>
+                                            <td>6.4 km</td>
+                                            <td>48 min</td>
+                                            <td>2.9 mmol/L</td>
+                                            <td>142 bpm</td>
+                                        </tr>
+                                        <tr>
+                                            <td>March 9, 2025</td>
+                                            <td>Long Run</td>
+                                            <td>15.2 km</td>
+                                            <td>92 min</td>
+                                            <td>3.3 mmol/L</td>
+                                            <td>149 bpm</td>
+                                        </tr>
+                                        <tr>
+                                            <td>March 7, 2025</td>
+                                            <td>Tempo Run</td>
+                                            <td>7.8 km</td>
+                                            <td>52 min</td>
+                                            <td>3.9 mmol/L</td>
+                                            <td>162 bpm</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        
+                        <!-- Insights Tab Content -->
+                        <div class="dashboard-tab" id="insights-tab">
+                            <div class="dashboard-card">
+                                <h3>Training Heatmap - March 2025</h3>
+                                <p>Your training intensity over the last 28 days</p>
+                                
+                                <div class="heatmap-container">
+                                    <!-- Week labels -->
+                                    <div class="heatmap-label">Mon</div>
+                                    <div class="heatmap-label">Tue</div>
+                                    <div class="heatmap-label">Wed</div>
+                                    <div class="heatmap-label">Thu</div>
+                                    <div class="heatmap-label">Fri</div>
+                                    <div class="heatmap-label">Sat</div>
+                                    <div class="heatmap-label">Sun</div>
+                                    
+                                    <!-- Week 1: Mar 1-7 -->
+                                    <div class="heatmap-day" data-date="Mar 1"></div>
+                                    <div class="heatmap-day" data-date="Mar 2"></div>
+                                    <div class="heatmap-day level-2" data-date="Mar 3"></div>
+                                    <div class="heatmap-day level-3" data-date="Mar 4"></div>
+                                    <div class="heatmap-day" data-date="Mar 5"></div>
+                                    <div class="heatmap-day level-1" data-date="Mar 6"></div>
+                                    <div class="heatmap-day level-4" data-date="Mar 7"></div>
+                                    
+                                    <!-- Week 2: Mar 8-14 -->
+                                    <div class="heatmap-day" data-date="Mar 8"></div>
+                                    <div class="heatmap-day level-2" data-date="Mar 9"></div>
+                                    <div class="heatmap-day" data-date="Mar 10"></div>
+                                    <div class="heatmap-day level-3" data-date="Mar 11"></div>
+                                    <div class="heatmap-day" data-date="Mar 12"></div>
+                                    <div class="heatmap-day level-5" data-date="Mar 13"></div>
+                                    <div class="heatmap-day level-1" data-date="Mar 14"></div>
+                                    
+                                    <!-- Week 3: Mar 15-21 -->
+                                    <div class="heatmap-day level-1" data-date="Mar 15"></div>
+                                    <div class="heatmap-day" data-date="Mar 16"></div>
+                                    <div class="heatmap-day level-4" data-date="Mar 17"></div>
+                                    <div class="heatmap-day" data-date="Mar 18"></div>
+                                    <div class="heatmap-day level-2" data-date="Mar 19"></div>
+                                    <div class="heatmap-day" data-date="Mar 20"></div>
+                                    <div class="heatmap-day level-3" data-date="Mar 21"></div>
+                                    
+                                    <!-- Week 4: Mar 22-28 -->
+                                    <div class="heatmap-day" data-date="Mar 22"></div>
+                                    <div class="heatmap-day level-3" data-date="Mar 23"></div>
+                                    <div class="heatmap-day" data-date="Mar 24"></div>
+                                    <div class="heatmap-day level-5" data-date="Mar 25"></div>
+                                    <div class="heatmap-day" data-date="Mar 26"></div>
+                                    <div class="heatmap-day level-2" data-date="Mar 27"></div>
+                                    <div class="heatmap-day level-4" data-date="Mar 28"></div>
+                                </div>
+                                
+                                <div class="chart-legend mt-4">
+                                    <div class="legend-item">
+                                        <span class="legend-color" style="background-color: #e6f2db;"></span>
+                                        <span>Light</span>
+                                    </div>
+                                    <div class="legend-item">
+                                        <span class="legend-color" style="background-color: #c6e2af;"></span>
+                                        <span>Moderate</span>
+                                    </div>
+                                    <div class="legend-item">
+                                        <span class="legend-color" style="background-color: #a6d385;"></span>
+                                        <span>Medium</span>
+                                    </div>
+                                    <div class="legend-item">
+                                        <span class="legend-color" style="background-color: var(--primary);"></span>
+                                        <span>High</span>
+                                    </div>
+                                    <div class="legend-item">
+                                        <span class="legend-color" style="background-color: var(--primary-dark);"></span>
+                                        <span>Intense</span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="dashboard-card mt-4">
+                                <h3>Lactate Threshold Progress</h3>
+                                <p>Your lactate threshold has improved by 7% over the last 3 months</p>
+                                
+                                <div class="progress-chart-container">
+                                    <div class="progress-chart">
+                                        <div class="progress-month">Jan</div>
+                                        <div class="progress-month">Feb</div>
+                                        <div class="progress-month">Mar</div>
+                                        <div class="progress-month">Apr</div>
+                                        
+                                        <div class="progress-line"></div>
+                                        <div class="progress-point" style="left: 12.5%" data-value="3.7" data-month="Jan"></div>
+                                        <div class="progress-point" style="left: 37.5%" data-value="3.8" data-month="Feb"></div>
+                                        <div class="progress-point" style="left: 62.5%" data-value="3.9" data-month="Mar"></div>
+                                        <div class="progress-point" style="left: 87.5%" data-value="4.0" data-month="Apr"></div>
+                                    </div>
+                                </div>
+                                
+                                <div class="progress-stats">
+                                    <div class="progress-stat">
+                                        <div class="stat-value">7%</div>
+                                        <div class="stat-label">Improvement</div>
+                                    </div>
+                                    <div class="progress-stat">
+                                        <div class="stat-value">4.0</div>
+                                        <div class="stat-label">Current Threshold</div>
+                                    </div>
+                                    <div class="progress-stat">
+                                        <div class="stat-value">0.3</div>
+                                        <div class="stat-label">mmol/L Gained</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Settings Tab Content -->
+                        <div class="dashboard-tab" id="settings-tab">
+                            <div class="dashboard-card">
+                                <h3>Account Settings</h3>
+                                <div class="settings-form">
+                                    <div class="settings-group">
+                                        <label for="unitSystem">Distance Unit</label>
+                                        <select id="unitSystem" class="form-select">
+                                            <option value="metric" selected>Kilometers (km)</option>
+                                            <option value="imperial">Miles (mi)</option>
+                                        </select>
+                                    </div>
+                                    
+                                    <div class="settings-group">
+                                        <label for="notifications">Notification Preferences</label>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" id="notifyThreshold" checked>
+                                            <label class="form-check-label" for="notifyThreshold">
+                                                Alert when approaching lactate threshold
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" id="notifyZones" checked>
+                                            <label class="form-check-label" for="notifyZones">
+                                                Training zone transitions
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" id="notifyReport">
+                                            <label class="form-check-label" for="notifyReport">
+                                                Weekly training reports
+                                            </label>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="settings-group">
+                                        <label for="integrations">Connected Devices</label>
+                                        <div class="d-flex justify-content-between align-items-center mb-2 p-2 border rounded">
+                                            <div>Garmin Forerunner 955</div>
+                                            <button class="btn btn-sm btn-outline-danger">Disconnect</button>
+                                        </div>
+                                        <div class="d-flex justify-content-between align-items-center p-2 border rounded">
+                                            <div>THRESHOLD App (iPhone)</div>
+                                            <button class="btn btn-sm btn-outline-danger">Disconnect</button>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="d-flex justify-content-between mt-4">
+                                        <button class="btn btn-primary">Save Changes</button>
+                                        <button class="btn btn-outline-secondary">Log Out</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team CTA Section (Replacing Buy Now) -->
+    <section class="cta team-cta py-6">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8 text-center">
+                    <h2 class="display-5 fw-bold text-white mb-4">Meet Our Team</h2>
+                    <p class="lead text-white mb-5">The passionate experts behind THRESHOLD's revolutionary technology.</p>
+                    <a href="team.html" class="btn btn-light btn-lg px-5 py-3 fw-bold">MEET THE TEAM</a>
+                </div>
+            </div>
+        </div>
+        <div class="cta-shapes">
+            <div class="cta-shape cta-shape-1"></div>
+            <div class="cta-shape cta-shape-2"></div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact" class="footer py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 mb-4 mb-lg-0">
+                    <div class="footer-brand">
+                        <h5 class="text-white mb-3">THRESHOLD</h5>
+                        <p class="text-light mb-4">Revolutionary lactate monitoring technology for athletes who want to train smarter.</p>
+                        <div class="social-links">
+                            <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                            <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                            <a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-8">
+                    <div class="row">
+                        <div class="col-md-4 mb-4 mb-md-0">
+                            <h5 class="text-white mb-3">Quick Links</h5>
+                            <ul class="list-unstyled footer-links">
+                                <li><a href="index.html">Home</a></li>
+                                <li><a href="#features">Features</a></li>
+                                <li><a href="#integration">Integrations</a></li>
+                                <li><a href="#addons">Add-ons</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-md-4 mb-4 mb-md-0">
+                            <h5 class="text-white mb-3">Support</h5>
+                            <ul class="list-unstyled footer-links">
+                                <li><a href="#">FAQ</a></li>
+                                <li><a href="#">User Guide</a></li>
+                                <li><a href="#">Contact Support</a></li>
+                                <li><a href="#">Shipping & Returns</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-md-4">
+                            <h5 class="text-white mb-3">Contact</h5>
+                            <ul class="list-unstyled contact-info">
+                                <li><i class="fas fa-envelope me-2"></i> info@threshold.com</li>
+                                <li><i class="fas fa-phone me-2"></i> +1 (555) 123-4567</li>
+                                <li><i class="fas fa-map-marker-alt me-2"></i> 123 Innovation Drive</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center border-top border-secondary pt-4 mt-4">
+                <p class="mb-0 text-light">&copy; 2025 THRESHOLD. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- Custom JS -->
+    <script src="script.js"></script>
+</body>
+</html>
