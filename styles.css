@@ -677,10 +677,8 @@ header {
     font-weight: 600;
 }
 
-/* Fixed analytics tabs layout */
 .dashboard-nav {
     display: flex;
-    flex-wrap: wrap;
 }
 
 .nav-item {
@@ -690,8 +688,6 @@ header {
     padding-bottom: 0.3rem;
     opacity: 0.7;
     transition: all 0.3s ease;
-    white-space: nowrap;
-    font-size: 0.95rem;
 }
 
 .nav-item:hover {
@@ -1431,42 +1427,56 @@ header {
     opacity: 0.7;
 }
 
-/* Team Social Links - FIXED HOVER/PRESS STYLES */
+/* Team Social Links - IMPROVED FOR IPHONE */
 .team-social {
-    margin-top: auto;
-    padding-top: 10px;
     display: flex;
-    gap: 10px;
+    gap: 15px; /* Increased gap for better spacing on mobile */
+    margin-top: auto;
+    padding-top: 15px; /* Added more padding */
+    border-top: 1px solid rgba(134, 176, 73, 0.2); /* Added border for better separation */
 }
 
 .team-social-link {
-    width: 40px;
-    height: 40px;
+    width: 50px; /* Larger touchpoint for mobile */
+    height: 50px; /* Larger touchpoint for mobile */
     display: flex;
     align-items: center;
     justify-content: center;
     background-color: #f0f0f0;
     border-radius: 50%;
-    color: #666 !important; /* Force initial color */
-    font-size: 1.2rem;
+    color: #666 !important; /* Force color */
+    font-size: 1.5rem; /* Larger icons for mobile */
     transition: all 0.3s ease;
-    text-decoration: none;
-    border: 1px solid #ddd;
+    text-decoration: none !important; /* Force no underline */
+    border: 2px solid #ddd; /* More visible border */
+    -webkit-tap-highlight-color: rgba(134, 176, 73, 0.3); /* Safari/iOS tap color */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Add shadow for visibility */
 }
 
 .team-social-link:hover,
 .team-social-link:active,
 .team-social-link:focus {
-    background-color: var(--primary);
+    background-color: #86B049; /* Use primary color directly */
     color: white !important;
     transform: translateY(-3px);
     box-shadow: 0 5px 15px rgba(134, 176, 73, 0.3);
-    text-decoration: none;
-    border-color: var(--primary);
+    text-decoration: none !important;
+    border-color: #86B049;
 }
 
-.team-social-link:visited {
-    color: #666;
+/* Fix Safari/iOS specific issues */
+.team-social-link i {
+    position: relative; /* Ensure icon is properly positioned */
+    pointer-events: none; /* Make sure tap events go to the link element */
+}
+
+/* Fix for iOS/Safari hover/active state */
+@media (pointer: coarse) {
+    .team-social-link:active {
+        background-color: #86B049;
+        color: white !important;
+        transform: translateY(-3px);
+    }
 }
 
 /* Better pyramid layout for the second row */
@@ -1679,37 +1689,15 @@ header {
     .team-member-image {
         height: 350px; /* Taller on mobile */
     }
-    
-    /* Fix for dashboard nav spacing */
-    .dashboard-nav {
-        flex-wrap: wrap;
-        justify-content: space-between;
-        margin-top: 10px;
-        width: 100%;
+}
+
+/* Additional mobile fixes */
+@media (max-width: 380px) {
+    .team-social {
+        justify-content: center; /* Center links on very small screens */
     }
     
-    .nav-item {
-        margin: 0 10px 10px 0;
-        font-size: 0.9rem;
-    }
-    
-    /* Mobile footer centering */
-    .footer {
-        text-align: center;
-    }
-    
-    .footer-brand h5::after,
-    .footer h5::after {
-        left: 50%;
-        transform: translateX(-50%);
-    }
-    
-    .social-links {
-        justify-content: center;
-    }
-    
-    .footer-links,
-    .contact-info {
-        text-align: center;
+    .team-member-bio {
+        max-height: 150px; /* Less space for bio on small screens */
     }
 }
