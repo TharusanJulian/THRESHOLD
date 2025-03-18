@@ -1427,30 +1427,42 @@ header {
     opacity: 0.7;
 }
 
-/* Team Social Links - IMPROVED FOR IPHONE */
+/* Team Social Links - FIXED FOR IPHONE */
 .team-social {
     display: flex;
-    gap: 15px; /* Increased gap for better spacing on mobile */
+    gap: 10px; /* Reduced gap for better spacing on mobile */
     margin-top: auto;
     padding-top: 15px; /* Added more padding */
     border-top: 1px solid rgba(134, 176, 73, 0.2); /* Added border for better separation */
+    position: relative;
+    z-index: 2; /* Ensure visibility */
+    width: 100%; /* Full width */
+    bottom: 0; /* Stick to bottom */
+    left: 0; /* Align with card edge */
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+    padding-bottom: 10px; /* Add some bottom padding */
+    margin-left: -1.5rem; /* Offset the padding */
+    margin-right: -1.5rem; /* Offset the padding */
+    background-color: white; /* Ensure background is solid */
 }
 
 .team-social-link {
-    width: 50px; /* Larger touchpoint for mobile */
-    height: 50px; /* Larger touchpoint for mobile */
+    width: 40px; /* Smaller size for better mobile display */
+    height: 40px; /* Smaller size for better mobile display */
     display: flex;
     align-items: center;
     justify-content: center;
     background-color: #f0f0f0;
     border-radius: 50%;
     color: #666 !important; /* Force color */
-    font-size: 1.5rem; /* Larger icons for mobile */
+    font-size: 1.2rem; /* Smaller icons for mobile compatibility */
     transition: all 0.3s ease;
     text-decoration: none !important; /* Force no underline */
     border: 2px solid #ddd; /* More visible border */
     -webkit-tap-highlight-color: rgba(134, 176, 73, 0.3); /* Safari/iOS tap color */
     box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Add shadow for visibility */
+    position: relative; /* Ensure proper positioning for transforms */
 }
 
 .team-social-link:hover,
@@ -1468,6 +1480,7 @@ header {
 .team-social-link i {
     position: relative; /* Ensure icon is properly positioned */
     pointer-events: none; /* Make sure tap events go to the link element */
+    z-index: 1; /* Ensure visibility */
 }
 
 /* Fix for iOS/Safari hover/active state */
@@ -1476,6 +1489,23 @@ header {
         background-color: #86B049;
         color: white !important;
         transform: translateY(-3px);
+    }
+}
+
+/* Safari/iOS specific fixes */
+@supports (-webkit-touch-callout: none) {
+    .team-social {
+        display: flex;
+        justify-content: flex-start; /* Align to left */
+        flex-wrap: nowrap; /* Prevent wrapping */
+        overflow: visible; /* Ensure visible */
+        position: relative; /* Proper positioning */
+    }
+    
+    .team-social-link {
+        transform: translateZ(0); /* Force hardware acceleration */
+        will-change: transform; /* Hint to browser about transforms */
+        margin-right: 5px; /* Explicit margin */
     }
 }
 
@@ -1689,15 +1719,92 @@ header {
     .team-member-image {
         height: 350px; /* Taller on mobile */
     }
+    
+    /* Adjust team member info for mobile */
+    .team-member-info {
+        padding: 1.2rem;
+    }
+    
+    /* Make social links display properly on mobile */
+    .team-social {
+        padding: 10px 1.2rem;
+        margin-left: -1.2rem;
+        margin-right: -1.2rem;
+        justify-content: flex-start;
+        overflow-x: visible;
+    }
+    
+    .team-social-link {
+        width: 38px;
+        height: 38px;
+        font-size: 1.1rem;
+    }
 }
 
 /* Additional mobile fixes */
 @media (max-width: 380px) {
     .team-social {
-        justify-content: center; /* Center links on very small screens */
+        justify-content: flex-start; /* Start from left on small screens */
+        padding-left: 1rem;
+        padding-right: 1rem;
+        margin-left: -1rem;
+        margin-right: -1rem;
+        gap: 8px; /* Even smaller gap on very small screens */
     }
     
     .team-member-bio {
         max-height: 150px; /* Less space for bio on small screens */
+    }
+    
+    .team-social-link {
+        width: 36px; /* Even smaller on very small screens */
+        height: 36px;
+        font-size: 1rem;
+    }
+    
+    .team-member-info {
+        padding: 1rem; /* Reduced padding */
+    }
+}
+
+/* iPhone-specific fixes */
+@media screen and (max-width: 767px) and (-webkit-min-device-pixel-ratio: 2), 
+       screen and (max-width: 767px) and (min-resolution: 192dpi) {
+    .team-social {
+        position: relative;
+        display: flex;
+        justify-content: flex-start;
+        flex-wrap: nowrap;
+        overflow: visible;
+        padding-left: 1rem;
+        padding-right: 1rem;
+        gap: 8px;
+        width: calc(100% + 2rem);
+        margin-left: -1rem;
+        margin-right: -1rem;
+        background-color: white;
+        z-index: 5;
+    }
+    
+    .team-social-link {
+        width: 36px;
+        height: 36px;
+        font-size: 1rem;
+        display: inline-flex;
+        margin-right: 0;
+        position: relative;
+        z-index: 2;
+        transform: translateZ(0);
+    }
+    
+    .team-member-info {
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        padding: 1rem;
+    }
+    
+    .team-member-card {
+        overflow: visible;
     }
 }
