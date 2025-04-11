@@ -8,6 +8,8 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
     <!-- Custom CSS -->
     <link rel="stylesheet" href="styles.css">
 </head>
@@ -15,10 +17,10 @@
     <!-- Header -->
     <header class="fixed-top">
         <nav class="navbar navbar-expand-lg">
-            <div class="container position-relative">
+            <div class="container">
                 <a class="navbar-brand" href="index.html">
                     <div class="logo-container">
-                        <img src="logo.png" alt="THRESHOLD Logo" class="brand-logo">
+                        <img src="nylogo.jpg" alt="THRESHOLD Logo" class="brand-logo">
                         <span class="brand-text">THRESHOLD</span>
                     </div>
                 </a>
@@ -46,46 +48,54 @@
                             <a class="nav-link active" href="team.html">Our Team</a>
                         </li>
                     </ul>
-                    <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ&ab_channel=RickAstley" target="_blank" class="btn btn-primary ms-lg-3">BUY NOW</a>
+                    <a href="#" class="btn btn-primary">BUY NOW</a>
                 </div>
             </div>
         </nav>
     </header>
 
-    <!-- Team Header -->
-    <section class="team-header">
-        <div class="team-header-overlay"></div>
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-lg-8 text-center">
-                    <h1 class="display-4 fw-bold mb-4">Meet Our Team</h1>
-                    <p class="lead mb-0">The passionate experts behind THRESHOLD's revolutionary technology</p>
-                </div>
+<!-- Team Hero with Anime Image -->
+<section class="team-hero">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-10 text-center">
+                <h1 class="team-hero-title">The Team Behind THRESHOLD</h1>
+                <div class="team-hero-divider"></div>
+                <p class="team-hero-subtitle">Meet the passionate experts driving innovation in lactate monitoring technology</p>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
     <!-- Team Members -->
-    <section class="py-6 bg-light">
+    <section class="team-section">
         <div class="container">
-            <div class="row g-4 team-row">
+            <!-- First row: Leadership team -->
+            <div class="row justify-content-center mb-4">
+                <div class="col-12 text-center">
+                    <h2 class="team-row-title">Executive Leadership</h2>
+                    <div class="team-row-divider"></div>
+                </div>
+            </div>
+            
+            <div class="row">
                 <!-- Team Member 1 - Amanda -->
-                <div class="col-md-6 col-lg-4">
-                    <div class="team-member-card">
-                        <img src="att.4P_F27SS2fLgAsBpezL-6pBCSbuGKApwFJkOeYUN0t4.jpg" alt="Amanda Marie Grefstad Frøynes" class="team-member-image">
-                        <div class="team-member-info">
-                            <h3 class="team-member-name">Amanda Marie Grefstad Frøynes</h3>
-                            <div class="team-member-title">Chief Executive Officer</div>
-                            <div class="team-member-bio">
-                                <p>Meet Amanda: The Speed Demon with an Engineer's Mind! 🏃‍♀️💨 When she's not sprinting past competitors on the 800m track, Amanda is racing ahead of the competition in the boardroom!</p>
-                                
-                                <p>This civil engineering grad (who's currently leveling up with a Master's in Entrepreneurship and Leadership) doesn't just build bridges—she builds AMAZING teams.</p>
-                                
-                                <p>As our executive powerhouse, Amanda brings her sports tech savvy and business development skills to the table faster than you can say "personal best." Speaking of speed—this track star once blasted through a marathon so quickly that stopwatches did a double-take!</p>
-                                
-                                <p>Some leaders walk the walk. Amanda? She RUNS it. At record pace! 🏆</p>
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="team-card">
+                        <div class="team-card-image-container">
+                            <img src="att.4P_F27SS2fLgAsBpezL-6pBCSbuGKApwFJkOeYUN0t4.jpg" alt="Amanda Marie Grefstad Frøynes" class="team-card-image">
+                        </div>
+                        <div class="team-card-body">
+                            <div class="team-card-header">
+                                <h3 class="team-card-name">Amanda Marie Grefstad Frøynes</h3>
+                                <p class="team-card-title">Chief Executive Officer</p>
                             </div>
-                            <div class="team-social">
+                            <div class="team-card-content">
+                                <p>Meet Amanda: The Speed Demon with an Engineer's Mind! 🏃‍♀️💨 When she's not sprinting past competitors on the 800m track, Amanda is racing ahead of the competition in the boardroom!</p>
+                                <p>This civil engineering grad (who's currently leveling up with a Master's in Entrepreneurship and Leadership) doesn't just build bridges—she builds AMAZING teams.</p>
+                                <p>As our executive powerhouse, Amanda brings her sports tech savvy and business development skills to the table faster than you can say "personal best." Speaking of speed—this track star once blasted through a marathon so quickly that stopwatches did a double-take!</p>
+                            </div>
+                            <div class="team-card-footer">
                                 <a href="https://www.linkedin.com/in/amanda-fr%C3%B8ynes/" target="_blank" class="team-social-link"><i class="fab fa-linkedin-in"></i></a>
                                 <a href="mailto:amanda@threshold.com" class="team-social-link"><i class="fas fa-envelope"></i></a>
                             </div>
@@ -94,22 +104,25 @@
                 </div>
 
                 <!-- Team Member 2 - Jon Einar -->
-                <div class="col-md-6 col-lg-4">
-                    <div class="team-member-card">
-                        <img src="att.Vq_ynewn5l0X-QzWFwXYg7f95mQHguu1T7twm7z30Jw.jpg" alt="Jon Einar Rydsaa" class="team-member-image">
-                        <div class="team-member-info">
-                            <h3 class="team-member-name">Jon Einar Rydsaa</h3>
-                            <div class="team-member-title">Chief Technical Officer</div>
-                            <div class="team-member-bio">
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="team-card">
+                        <div class="team-card-image-container">
+                            <img src="att.Vq_ynewn5l0X-QzWFwXYg7f95mQHguu1T7twm7z30Jw.jpg" alt="Jon Einar Rydsaa" class="team-card-image">
+                        </div>
+                        <div class="team-card-body">
+                            <div class="team-card-header">
+                                <h3 class="team-card-name">Jon Einar Rydsaa</h3>
+                                <p class="team-card-title">Chief Technical Officer</p>
+                            </div>
+                            <div class="team-card-content">
                                 <p>Meet Our Skiing Sensation with an Engineer's Brain! ⛷️🧠 Talk about a triple threat! This mechanical engineering grad isn't just crunching numbers—he's crushing slopes and pursuing a Master's in Entrepreneurship and Leadership!</p>
-                                
+                            
                                 <p>After a year in the engineering world, he threw caution to the wind to chase his Threshold dreams. And speaking of breathing—NO ONE has a better VO2 max than this oxygen-processing machine!</p>
                                 
                                 <p>When he straps on those skis, he transforms into an ABSOLUTE UNIT that would make Olympic champions do a double-take!</p>
                                 
-                                <p>When he's not conquering mountains or boardrooms, you'll find him cheering his heart out for Bodø/Glimt with the passion only a true die-hard supporter can muster! 🟡⚫</p>
                             </div>
-                            <div class="team-social">
+                            <div class="team-card-footer">
                                 <a href="https://www.linkedin.com/in/jon-einar-rydsaa-2392a5260/" target="_blank" class="team-social-link"><i class="fab fa-linkedin-in"></i></a>
                                 <a href="mailto:joneinar@threshold.com" class="team-social-link"><i class="fas fa-envelope"></i></a>
                             </div>
@@ -118,46 +131,53 @@
                 </div>
 
                 <!-- Team Member 3 - Khayal -->
-                <div class="col-md-6 col-lg-4">
-                    <div class="team-member-card">
-                        <img src="att.W8HiDLUm8kRzvCcD7S_I_VOB9nI3CjPsY0KT7wu_lDs.jpg" alt="Khayal Dharmendra Devaka" class="team-member-image">
-                        <div class="team-member-info">
-                            <h3 class="team-member-name">Khayal Dharmendra Devaka</h3>
-                            <div class="team-member-title">Chief Financial Officer</div>
-                            <div class="team-member-bio">
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="team-card">
+                        <div class="team-card-image-container">
+                            <img src="att.W8HiDLUm8kRzvCcD7S_I_VOB9nI3CjPsY0KT7wu_lDs.jpg" alt="Khayal Dharmendra Devaka" class="team-card-image">
+                        </div>
+                        <div class="team-card-body">
+                            <div class="team-card-header">
+                                <h3 class="team-card-name">Khayal Dharmendra Devaka</h3>
+                                <p class="team-card-title">Chief Financial Officer</p>
+                            </div>
+                            <div class="team-card-content">
                                 <p>Move over, Forrest Gump! Khayal is our long-distance running LEGEND who's racing toward success while pursuing his Master's in Entrepreneurship and Leadership! 🏆</p>
-                                
+                            
                                 <p>With a mechanical engineering background and a MOUNTAIN of experience commanding huge teams, this consulting world escape artist decided to shake things up and dive into new challenges! Because why settle for ordinary when you can be EXTRAORDINARY?</p>
                                 
                                 <p>When he's not managing projects, Khayal is managing flavors as our resident culinary genius! 👨‍🍳 Paired with his EXCEPTIONAL taste in music and movies, dinner at his place is basically a full sensory masterpiece!</p>
-                                
-                                <p>Some people have skills. Khayal? He has ALL the skills! This renaissance man runs marathons, engineers solutions, creates culinary magic, and still has time to curate the perfect playlist! 🎵🎬</p>
                             </div>
-                            <div class="team-social">
+                            <div class="team-card-footer">
                                 <a href="https://www.linkedin.com/in/khayal-dharmendra-devaka-2325b0101/" target="_blank" class="team-social-link"><i class="fab fa-linkedin-in"></i></a>
                                 <a href="mailto:khayal@threshold.com" class="team-social-link"><i class="fas fa-envelope"></i></a>
                             </div>
                         </div>
                     </div>
                 </div>
+            </div>
 
+            <!-- Second row -->
+            <div class="row mt-4">
                 <!-- Team Member 4 - Peder -->
-                <div class="col-md-6 col-lg-4">
-                    <div class="team-member-card">
-                        <img src="att.w2kWakCDIqLv20iqI-63WB8W-ANZNquizg_oub-4LRw.jpg" alt="Peder Hvidsten Hem" class="team-member-image">
-                        <div class="team-member-info">
-                            <h3 class="team-member-name">Peder Hvidsten Hem</h3>
-                            <div class="team-member-title">Chief Operating Officer</div>
-                            <div class="team-member-bio">
+                <div class="col-lg-4 col-md-6 mb-4 offset-lg-2">
+                    <div class="team-card">
+                        <div class="team-card-image-container">
+                            <img src="att.w2kWakCDIqLv20iqI-63WB8W-ANZNquizg_oub-4LRw.jpg" alt="Peder Hvidsten Hem" class="team-card-image">
+                        </div>
+                        <div class="team-card-body">
+                            <div class="team-card-header">
+                                <h3 class="team-card-name">Peder Hvidsten Hem</h3>
+                                <p class="team-card-title">Chief Operating Officer</p>
+                            </div>
+                            <div class="team-card-content">
                                 <p>Meet Peder: The Sleeping Defender with Culinary Superpowers! 🍷⚽️😴 ATTENTION FOODIES! Peder isn't just a chef—he's a walking MICHELIN GUIDE IN DISGUISE!</p>
-                                
+                            
                                 <p>This culinary detective can sniff out premium produce like a truffle-hunting pig with GPS! 🥇 Like his brilliant teammates, Peder is CONQUERING the Master's in Entrepreneurship and Leadership program!</p>
                                 
                                 <p>When he's not whipping up gourmet masterpieces or studying business strategy, he's swirling, sniffing, and sipping the finest wines with the precision of a sommelier scientist! 🍷</p>
-                                
-                                <p>On the football pitch? This DEFENSIVE DYNAMO channels his inner Philipp Lahm so effectively that forwards see him in their nightmares! Speaking of sleep—Peder doesn't just do it, he MASTERED it with a whole YEAR of dedicated study! 💤</p>
                             </div>
-                            <div class="team-social">
+                            <div class="team-card-footer">
                                 <a href="https://www.linkedin.com/in/peder-hvidsten-hem/" target="_blank" class="team-social-link"><i class="fab fa-linkedin-in"></i></a>
                                 <a href="mailto:peder@threshold.com" class="team-social-link"><i class="fas fa-envelope"></i></a>
                             </div>
@@ -166,22 +186,24 @@
                 </div>
 
                 <!-- Team Member 5 - Phelix -->
-                <div class="col-md-6 col-lg-4">
-                    <div class="team-member-card">
-                        <img src="att.oblVHgRw1D43mF7P9IFIi9ycqjd_WbI5WWtZZFa5-dA.jpg" alt="Phelix Li WU" class="team-member-image">
-                        <div class="team-member-info">
-                            <h3 class="team-member-name">Phelix Li WU</h3>
-                            <div class="team-member-title">Chief Marketing Officer</div>
-                            <div class="team-member-bio">
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="team-card">
+                        <div class="team-card-image-container">
+                            <img src="att.oblVHgRw1D43mF7P9IFIi9ycqjd_WbI5WWtZZFa5-dA.jpg" alt="Phelix Li WU" class="team-card-image">
+                        </div>
+                        <div class="team-card-body">
+                            <div class="team-card-header">
+                                <h3 class="team-card-name">Phelix Li WU</h3>
+                                <p class="team-card-title">Chief Marketing Officer</p>
+                            </div>
+                            <div class="team-card-content">
                                 <p>The Biology Wizard with Ramsay-Level Cooking Skills! 🍳🧬🏃‍♂️ CALLING ALL ANIME FANS! Phelix isn't just another biology graduate—he's a CULINARY MASTERMIND who puts Gordon Ramsay on notice!</p>
-                                
+                            
                                 <p>This kitchen wizard has likely prepared EVERY DISH KNOWN TO HUMANITY with the precision of a scientist and the passion of a true foodie! 🔥</p>
                                 
                                 <p>When he's not transforming ingredients into edible masterpieces, Phelix is pounding the pavement as a dedicated runner or mastering the art of sujo with the grace of a samurai! 🥋</p>
-                                
-                                <p>Like his ambitious teammates, this BIOLOGY BRAINIAC is conquering the Master's in Entrepreneurship and Leadership program, because why dominate just the kitchen when you can rule the business world too? 📊</p>
                             </div>
-                            <div class="team-social">
+                            <div class="team-card-footer">
                                 <a href="https://www.linkedin.com/in/phelix-li-wu-609236268/" target="_blank" class="team-social-link"><i class="fab fa-linkedin-in"></i></a>
                                 <a href="mailto:phelix@threshold.com" class="team-social-link"><i class="fas fa-envelope"></i></a>
                             </div>
@@ -192,31 +214,27 @@
         </div>
     </section>
 
-    <!-- Join Our Team CTA -->
-    <section class="cta py-6">
+    <!-- Join Our Team CTA - smaller -->
+    <section class="join-team-cta">
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-lg-8 text-center">
-                    <h2 class="display-5 fw-bold text-white mb-4">Join Our Team</h2>
-                    <p class="lead text-white mb-5">We're always looking for talented individuals who are passionate about sports technology and innovation.</p>
-                    <a href="#" class="btn btn-light btn-lg px-5 py-3 fw-bold">VIEW OPEN POSITIONS</a>
+                    <h2>Join Our Team</h2>
+                    <p>We're looking for talented professionals who are passionate about sports technology and performance optimization.</p>
+                    <a href="#" class="btn btn-light">View Open Positions</a>
                 </div>
             </div>
-        </div>
-        <div class="cta-shapes">
-            <div class="cta-shape cta-shape-1"></div>
-            <div class="cta-shape cta-shape-2"></div>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer id="contact" class="footer py-5">
+    <footer id="contact" class="footer">
         <div class="container">
             <div class="row">
                 <div class="col-lg-4 mb-4 mb-lg-0">
                     <div class="footer-brand">
-                        <h5 class="text-white mb-3">THRESHOLD</h5>
-                        <p class="text-light mb-4">Revolutionary lactate monitoring technology for athletes who want to train smarter.</p>
+                        <h5>THRESHOLD</h5>
+                        <p class="mb-4">Revolutionary lactate monitoring technology for athletes who want to train smarter.</p>
                         <div class="social-links">
                             <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
                             <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
@@ -228,8 +246,8 @@
                 <div class="col-lg-8">
                     <div class="row">
                         <div class="col-md-4 mb-4 mb-md-0">
-                            <h5 class="text-white mb-3">Quick Links</h5>
-                            <ul class="list-unstyled footer-links">
+                            <h5>Quick Links</h5>
+                            <ul class="footer-links">
                                 <li><a href="index.html">Home</a></li>
                                 <li><a href="index.html#features">Features</a></li>
                                 <li><a href="index.html#integration">Integrations</a></li>
@@ -237,8 +255,8 @@
                             </ul>
                         </div>
                         <div class="col-md-4 mb-4 mb-md-0">
-                            <h5 class="text-white mb-3">Support</h5>
-                            <ul class="list-unstyled footer-links">
+                            <h5>Support</h5>
+                            <ul class="footer-links">
                                 <li><a href="#">FAQ</a></li>
                                 <li><a href="#">User Guide</a></li>
                                 <li><a href="#">Contact Support</a></li>
@@ -246,8 +264,8 @@
                             </ul>
                         </div>
                         <div class="col-md-4">
-                            <h5 class="text-white mb-3">Contact</h5>
-                            <ul class="list-unstyled contact-info">
+                            <h5>Contact</h5>
+                            <ul class="contact-info">
                                 <li><i class="fas fa-envelope me-2"></i> info@threshold.com</li>
                                 <li><i class="fas fa-phone me-2"></i> +1 (555) 123-4567</li>
                                 <li><i class="fas fa-map-marker-alt me-2"></i> 123 Innovation Drive</li>
@@ -256,7 +274,7 @@
                     </div>
                 </div>
             </div>
-            <div class="text-center border-top border-secondary pt-4 mt-4">
+            <div class="text-center border-top pt-4 mt-4">
                 <p class="mb-0 text-light">&copy; 2025 THRESHOLD. All Rights Reserved.</p>
             </div>
         </div>

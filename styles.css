@@ -5,7 +5,7 @@
     --secondary: #333;
     --accent: #ff6b35;            /* Orange accent color */
     --accent-dark: #e84e0f;       /* Darker orange */
-    --dark: #222;
+    --dark: #323232;
     --light: #f8f9fa;
     --white: #ffffff;
     --transition: all 0.3s ease;
@@ -148,37 +148,43 @@ h1, h2, h3, h4, h5, h6 {
     gap: 12px;
 }
 
-/* Header/Navbar */
+/* ===== UPDATED HEADER/NAVBAR STYLES ===== */
 header {
-    background-color: rgba(34, 34, 34, 0.95);
-    padding: 0.8rem 0;
+    background-color: #323232;
+    padding: 0.7rem 0;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
     z-index: 1000;
-    backdrop-filter: blur(5px);
 }
 
-/* Simplified Brand Logo */
 .logo-container {
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 8px;
 }
 
 .brand-logo {
-    height: 40px;
+    height: 70px;
     width: auto;
 }
 
 .brand-text {
-    color: var(--primary);
-    font-size: 1.5rem;
-    font-weight: 700;
-    letter-spacing: 1px;
-    margin: 0;
+    color: white;
+    font-size: 1.3rem;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    text-transform: none;
+    font-family: 'Montserrat', 'Segoe UI', sans-serif;
 }
 
 .navbar {
     padding: 0;
+    display: flex;
+    align-items: center;
+}
+
+.navbar-nav {
+    display: flex;
+    align-items: center;
 }
 
 .navbar-brand {
@@ -186,10 +192,11 @@ header {
 }
 
 .navbar-nav .nav-link {
-    color: var(--white);
+    color: rgba(255, 255, 255, 0.85);
     font-weight: 500;
-    padding: 0.5rem 1rem;
+    padding: 0.6rem 1.2rem;
     transition: var(--transition);
+    position: relative;
 }
 
 .navbar-nav .nav-link:hover {
@@ -200,19 +207,96 @@ header {
     color: var(--primary);
 }
 
-/* Fixed navbar toggler positioning */
+.navbar-nav .nav-link::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -1px;
+    left: 50%;
+    background-color: var(--primary);
+    transition: all 0.3s ease;
+    transform: translateX(-50%);
+    opacity: 0;
+}
+
+.navbar-nav .nav-link:hover::after {
+    width: 60%;
+    opacity: 1;
+}
+
+.navbar .btn-primary {
+    background-color: var(--primary);
+    border: none;
+    color: white;
+    border-radius: 30px;
+    padding: 0.5rem 1.5rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-left: 0.5rem;
+    box-shadow: 0 3px 10px rgba(134, 176, 73, 0.2);
+    transition: var(--transition);
+    font-size: 0.9rem;
+}
+
+.navbar .btn-primary:hover, 
+.navbar .btn-primary:focus {
+    background-color: var(--primary-dark);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(134, 176, 73, 0.3);
+}
+
 .navbar-toggler {
     border: none;
     color: var(--white);
-    padding: 0.5rem;
-    position: absolute;
-    right: 1rem;
-    top: 50%;
-    transform: translateY(-50%);
 }
 
 .navbar-toggler-icon {
     background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(255, 255, 255, 1)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+
+/* Mobile responsive adjustments */
+@media (max-width: 991.98px) {
+    .navbar {
+        padding: 0.5rem 0;
+    }
+    
+    .navbar-collapse {
+        background-color: #323232;
+        padding: 1rem;
+        margin-top: 0.5rem;
+        border-radius: 5px;
+        border-left: 3px solid var(--primary);
+    }
+    
+    .navbar-nav .nav-link {
+        padding: 0.8rem 1rem;
+        border-bottom: 1px solid rgba(255,255,255,0.1);
+    }
+    
+    .navbar-nav .nav-link:last-child {
+        border-bottom: none;
+    }
+    
+    .navbar .btn-primary {
+        margin-top: 10px;
+        width: 100%;
+        text-align: center;
+        margin-left: 0;
+    }
+    
+    .brand-logo {
+        height: 55px;
+    }
+    
+    .brand-text {
+        font-size: 1.4rem;
+    }
+    
+    header {
+        padding: 0.8rem 0;
+    }
 }
 
 /* Hero Section */
@@ -246,6 +330,455 @@ header {
 .hero h1 .highlight {
     color: var(--primary);
 }
+
+/* Team Page Styles */
+.team-hero {
+    padding: 180px 0 100px;
+    position: relative;
+    overflow: hidden;
+    background-color: #333;
+    min-height: 500px;
+}
+
+.team-hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('team-anime.png');
+    background-size: cover; 
+    background-position: center -250px;
+    opacity: 0.7;
+    z-index: 0;
+    filter: brightness(0.8);
+}
+
+.team-hero::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        to bottom, 
+        rgba(0,0,0,0.3) 0%, 
+        rgba(0,0,0,0.6) 100%
+    );
+    z-index: 1;
+}
+
+.team-hero > .container {
+    position: relative;
+    z-index: 2;
+}
+
+@media (max-width: 991.98px) {
+    .team-hero {
+        padding: 120px 0 60px;
+        min-height: 450px;
+    }
+    
+    .team-hero::before {
+        background-position: center -200px;
+    }
+}
+
+@media (max-width: 767.98px) {
+    .team-hero {
+        padding: 100px 0 50px;
+        min-height: 380px;
+    }
+    
+    .team-hero::before {
+        background-position: center -150px;
+    }
+}
+
+.team-hero-title {
+    color: white;
+    text-shadow: 0 2px 10px rgba(0,0,0,0.5);
+    font-size: 2.8rem;
+}
+
+.team-hero-subtitle {
+    color: rgba(255,255,255,0.9);
+    text-shadow: 0 2px 6px rgba(0,0,0,0.5);
+    font-size: 1.2rem;
+}
+
+.team-hero-divider {
+    width: 80px;
+    height: 4px;
+    background-color: rgba(134, 176, 73, 0.9);
+    margin: 0.5rem auto 1rem;
+    position: relative;
+    z-index: 2;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.team-hero-accent {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background-color: var(--primary);
+    z-index: 3;
+}
+
+@media (max-width: 767.98px) {
+    .team-hero-title {
+        font-size: 2.4rem;
+    }
+    
+    .team-hero-subtitle {
+        font-size: 1.1rem;
+    }
+}
+
+.team-section {
+    padding: 60px 0;
+    background-color: #f8f9fa;
+}
+
+.team-row-title {
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 0.5rem;
+    text-align: center;
+}
+
+.team-row-divider {
+    width: 60px;
+    height: 3px;
+    background-color: var(--primary);
+    margin: 0 auto 1.5rem;
+}
+
+.team-card {
+    background-color: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+    height: 100%;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.team-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+}
+
+.team-card-image-container {
+    height: 260px;
+    overflow: hidden;
+    position: relative;
+}
+
+.team-card-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 30%;
+    transition: transform 0.5s ease;
+}
+
+.team-card:hover .team-card-image {
+    transform: scale(1.05);
+}
+
+.team-card-body {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.team-card-header {
+    margin-bottom: 12px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid rgba(134, 176, 73, 0.2);
+}
+
+.team-card-name {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 5px;
+    line-height: 1.3;
+}
+
+.team-card-title {
+    color: var(--primary);
+    font-size: 0.95rem;
+    font-weight: 600;
+    margin-bottom: 0;
+}
+
+.team-card-content {
+    flex-grow: 1;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: #555;
+}
+
+.team-card-content p {
+    margin-bottom: 12px;
+}
+
+.team-card-content p:last-child {
+    margin-bottom: 0;
+}
+
+.team-card-footer {
+    margin-top: 20px;
+    display: flex;
+    gap: 10px;
+}
+
+.team-social-link {
+    width: 38px;
+    height: 38px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #f5f5f5;
+    border-radius: 50%;
+    color: #555;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    text-decoration: none;
+}
+
+.team-social-link:hover {
+    background-color: var(--primary);
+    color: white;
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(134, 176, 73, 0.3);
+}
+
+/* Join Our Team CTA Section */
+.join-team-cta {
+    background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+    padding: 50px 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.join-team-cta::before,
+.join-team-cta::after {
+    content: '';
+    position: absolute;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    z-index: 1;
+}
+
+.join-team-cta::before {
+    width: 200px;
+    height: 200px;
+    top: -100px;
+    right: -50px;
+}
+
+.join-team-cta::after {
+    width: 150px;
+    height: 150px;
+    bottom: -75px;
+    left: -25px;
+}
+
+.join-team-cta .container {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+}
+
+.join-team-cta h2 {
+    color: white;
+    font-size: 2.2rem;
+    font-weight: 700;
+    margin-bottom: 0.8rem;
+}
+
+.join-team-cta p {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 1rem;
+    max-width: 600px;
+    margin: 0 auto 1.5rem;
+}
+
+.join-team-cta .btn-light {
+    background-color: white;
+    color: var(--primary);
+    border-radius: 30px;
+    padding: 0.7rem 1.8rem;
+    font-weight: 600;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    display: inline-block;
+}
+
+.join-team-cta .btn-light:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* Footer Styles */
+.footer {
+    background-color: #323232;
+    color: #bbb;
+    padding: 3rem 0 1rem;
+}
+
+.footer-brand {
+    margin-bottom: 1.5rem;
+}
+
+.footer-brand h5 {
+    color: white;
+    font-size: 1.2rem;
+    margin-bottom: 0.8rem;
+    position: relative;
+    padding-bottom: 0.5rem;
+}
+
+.footer-brand h5::after {
+    content: '';
+    position: absolute;
+    width: 40px;
+    height: 3px;
+    background-color: var(--primary);
+    bottom: 0;
+    left: 0;
+}
+
+.footer-brand p {
+    color: #bbb;
+    margin-bottom: 1rem;
+}
+
+.social-links {
+    display: flex;
+    gap: 10px;
+}
+
+.social-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    color: var(--white);
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+.social-link:hover {
+    background-color: var(--primary);
+    transform: translateY(-3px);
+    color: var(--white);
+}
+
+.footer-links h5 {
+    color: white;
+    font-size: 1rem;
+    margin-bottom: 0.8rem;
+    position: relative;
+    padding-bottom: 0.3rem;
+}
+
+.footer-links h5::after {
+    content: '';
+    position: absolute;
+    width: 30px;
+    height: 2px;
+    background-color: var(--primary);
+    bottom: 0;
+    left: 0;
+}
+
+.footer-links ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-links li {
+    margin-bottom: 0.5rem;
+}
+
+.footer-links a {
+    color: #bbb;
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+.footer-links a:hover {
+    color: var(--primary);
+    padding-left: 5px;
+}
+
+.contact-info li {
+    margin-bottom: 0.8rem;
+    color: #bbb;
+    display: flex;
+    align-items: center;
+}
+
+.contact-info li i {
+    margin-right: 0.5rem;
+    color: var(--primary);
+}
+
+.footer .border-top {
+    border-top: 1px solid rgba(255,255,255,0.1) !important;
+    padding-top: 1.5rem;
+    margin-top: 2rem;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 767.98px) {
+    .footer {
+        text-align: center;
+    }
+
+    .footer-links h5::after {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .social-links {
+        justify-content: center;
+    }
+
+    .footer-links ul {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .footer-links a:hover {
+        padding-left: 0;
+        color: var(--primary);
+    }
+
+    .contact-info {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+/* Remaining existing styles would continue here... */
 
 /* Modern Lactate Display */
 .modern-visualization {
@@ -441,6 +974,40 @@ header {
     transform: scale(1.1);
 }
 
+.feature-content {
+    padding: 1.5rem;
+}
+
+.feature-content h3 {
+    font-size: 1.3rem;
+    margin-bottom: 0.8rem;
+    color: var(--secondary);
+}
+
+.feature-content p {
+    color: #666;
+    margin-bottom: 0;
+}
+
+@keyframes pulseGauge {
+    0% {
+        transform: rotate(-30deg);
+        border-color: var(--accent);
+    }
+    50% {
+        transform: rotate(30deg);
+        border-color: var(--chart-yellow);
+    }
+    100% {
+        transform: rotate(60deg);
+        border-color: var(--primary);
+    }
+}
+/* Integration Section */
+.integration {
+    background-color: var(--white);
+}
+
 .integration-icon {
     position: relative;
     width: 80px;
@@ -485,41 +1052,6 @@ header {
     left: -5px;
     top: -3px;
     transform: rotate(45deg);
-}
-
-@keyframes pulseGauge {
-    0% {
-        transform: rotate(-30deg);
-        border-color: var(--accent);
-    }
-    50% {
-        transform: rotate(30deg);
-        border-color: var(--chart-yellow);
-    }
-    100% {
-        transform: rotate(60deg);
-        border-color: var(--primary);
-    }
-}
-
-.feature-content {
-    padding: 1.5rem;
-}
-
-.feature-content h3 {
-    font-size: 1.3rem;
-    margin-bottom: 0.8rem;
-    color: var(--secondary);
-}
-
-.feature-content p {
-    color: #666;
-    margin-bottom: 0;
-}
-
-/* Integration Section */
-.integration {
-    background-color: var(--white);
 }
 
 .partners {
@@ -654,7 +1186,6 @@ header {
     color: var(--primary);
     font-weight: bold;
 }
-
 /* Dashboard Styles */
 .dashboard {
     background-color: var(--white);
@@ -683,8 +1214,10 @@ header {
     font-weight: 600;
 }
 
+/* Fixed analytics tabs layout */
 .dashboard-nav {
     display: flex;
+    flex-wrap: wrap;
 }
 
 .nav-item {
@@ -694,6 +1227,8 @@ header {
     padding-bottom: 0.3rem;
     opacity: 0.7;
     transition: all 0.3s ease;
+    white-space: nowrap;
+    font-size: 0.95rem;
 }
 
 .nav-item:hover {
@@ -903,7 +1438,6 @@ header {
 .threshold-color {
     background-color: var(--accent);
 }
-
 /* Zones Card */
 .zones-container {
     display: flex;
@@ -1075,7 +1609,6 @@ header {
     font-size: 0.8rem;
     color: #777;
 }
-
 /* History Table */
 .history-table {
     width: 100%;
@@ -1267,7 +1800,6 @@ header {
     border-radius: 5px;
     background-color: white;
 }
-
 /* CTA Section */
 .cta {
     background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
@@ -1303,241 +1835,9 @@ header {
     left: -100px;
 }
 
-/* Team Page Styles */
-.team-header {
-    background-color: var(--primary);
-    color: white;
-    padding: 6rem 0 3rem;
-    position: relative;
-}
-
-.team-header-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(135deg, rgba(134, 176, 73, 0.9) 0%, rgba(106, 140, 58, 0.9) 100%);
-    z-index: -1;
-}
-
-/* Team Member Cards - IMPROVED STYLING */
-.team-member-card {
-    background-color: white;
-    border-radius: 10px;
-    overflow: hidden;
-    box-shadow: var(--shadow);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    height: 100%;
-    margin-bottom: 2.5rem;
-    border: 1px solid rgba(0,0,0,0.08);
-}
-
-.team-member-card:hover {
-    transform: translateY(-8px);
-    box-shadow: var(--shadow-lg);
-}
-
-/* Add more space between first and second row */
-.team-row {
-    margin-bottom: 2rem;
-}
-
-.team-row .col-md-6.col-lg-4 {
-    margin-bottom: 3rem; /* Increased space between rows */
-}
-
-.team-member-image {
-    width: 100%;
-    height: 300px;
-    object-fit: cover;
-    object-position: center 20%;
-    border-bottom: 3px solid var(--primary);
-}
-
-.team-member-info {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    height: calc(100% - 300px); /* Subtract image height */
-    padding: 1.5rem;
-}
-
-.team-member-name {
-    font-weight: 700;
-    font-size: 1.2rem;
-    margin-bottom: 5px;
-    color: var(--secondary);
-    transition: color 0.3s ease;
-}
-
-.team-member-card:hover .team-member-name {
-    color: var(--primary);
-}
-
-.team-member-title {
-    color: var(--primary);
-    font-weight: 600;
-    font-size: 1rem;
-    letter-spacing: 0.5px;
-    border-bottom: 1px solid rgba(134, 176, 73, 0.2);
-    padding-bottom: 10px;
-    margin-bottom: 15px;
-}
-
-/* Make bio content scrollable with fixed height */
-.team-member-bio {
-    color: #666;
-    font-size: 0.95rem;
-    line-height: 1.6;
-    max-height: 180px; /* Set a fixed height */
-    overflow-y: auto; /* Make it scrollable */
-    padding-right: 5px; /* Space for scrollbar */
-    margin-bottom: 1rem;
-}
-
-.team-member-bio p {
-    margin-bottom: 0.8rem;
-}
-
-/* Style the scrollbar */
-.team-member-bio::-webkit-scrollbar {
-    width: 6px;
-}
-
-.team-member-bio::-webkit-scrollbar-track {
-    background: #f1f1f1;
-    border-radius: 10px;
-}
-
-.team-member-bio::-webkit-scrollbar-thumb {
-    background: var(--primary);
-    border-radius: 10px;
-}
-
-.team-member-bio::-webkit-scrollbar-thumb:hover {
-    background: var(--primary-dark);
-}
-
-/* Add a subtle indicator for scrollable content */
-.team-member-bio::after {
-    content: '';
-    display: block;
-    height: 20px;
-    background: linear-gradient(to top, rgba(255,255,255,1) 0%, rgba(255,255,255,0) 100%);
-    position: absolute;
-    bottom: 55px; /* Position above social links */
-    left: 1.5rem;
-    right: 1.5rem;
-    pointer-events: none;
-    opacity: 0.7;
-}
-
-/* Team Social Links - FIXED FOR IPHONE */
-.team-social {
-    display: flex;
-    gap: 10px; /* Reduced gap for better spacing on mobile */
-    margin-top: auto;
-    padding-top: 15px; /* Added more padding */
-    border-top: 1px solid rgba(134, 176, 73, 0.2); /* Added border for better separation */
-    position: relative;
-    z-index: 2; /* Ensure visibility */
-    width: 100%; /* Full width */
-    bottom: 0; /* Stick to bottom */
-    left: 0; /* Align with card edge */
-    padding-left: 1.5rem;
-    padding-right: 1.5rem;
-    padding-bottom: 10px; /* Add some bottom padding */
-    margin-left: -1.5rem; /* Offset the padding */
-    margin-right: -1.5rem; /* Offset the padding */
-    background-color: white; /* Ensure background is solid */
-}
-
-.team-social-link {
-    width: 40px; /* Smaller size for better mobile display */
-    height: 40px; /* Smaller size for better mobile display */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: #f0f0f0;
-    border-radius: 50%;
-    color: #666 !important; /* Force color */
-    font-size: 1.2rem; /* Smaller icons for mobile compatibility */
-    transition: all 0.3s ease;
-    text-decoration: none !important; /* Force no underline */
-    border: 2px solid #ddd; /* More visible border */
-    -webkit-tap-highlight-color: rgba(134, 176, 73, 0.3); /* Safari/iOS tap color */
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Add shadow for visibility */
-    position: relative; /* Ensure proper positioning for transforms */
-}
-
-.team-social-link:hover,
-.team-social-link:active,
-.team-social-link:focus {
-    background-color: #86B049; /* Use primary color directly */
-    color: white !important;
-    transform: translateY(-3px);
-    box-shadow: 0 5px 15px rgba(134, 176, 73, 0.3);
-    text-decoration: none !important;
-    border-color: #86B049;
-}
-
-/* Fix Safari/iOS specific issues */
-.team-social-link i {
-    position: relative; /* Ensure icon is properly positioned */
-    pointer-events: none; /* Make sure tap events go to the link element */
-    z-index: 1; /* Ensure visibility */
-}
-
-/* Fix for iOS/Safari hover/active state */
-@media (pointer: coarse) {
-    .team-social-link:active {
-        background-color: #86B049;
-        color: white !important;
-        transform: translateY(-3px);
-    }
-}
-
-/* Safari/iOS specific fixes */
-@supports (-webkit-touch-callout: none) {
-    .team-social {
-        display: flex;
-        justify-content: flex-start; /* Align to left */
-        flex-wrap: nowrap; /* Prevent wrapping */
-        overflow: visible; /* Ensure visible */
-        position: relative; /* Proper positioning */
-    }
-    
-    .team-social-link {
-        transform: translateZ(0); /* Force hardware acceleration */
-        will-change: transform; /* Hint to browser about transforms */
-        margin-right: 5px; /* Explicit margin */
-    }
-}
-
-/* Better pyramid layout for the second row */
-.row.team-row {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-}
-
-/* Center the last two members - create pyramid effect */
-.row.team-row .col-md-6.col-lg-4:nth-last-child(-n+2) {
-    margin: 0 auto;
-}
-
-/* If exactly two members in second row, position them properly */
-.row.team-row .col-md-6.col-lg-4:nth-last-child(1):nth-child(5),
-.row.team-row .col-md-6.col-lg-4:nth-last-child(2):nth-child(4) {
-    max-width: 380px;
-    flex: 0 0 auto;
-    margin: 0 1rem;
-}
-
 /* Footer */
 .footer {
-    background-color: var(--dark);
+    background-color: #323232;
     color: #bbb;
 }
 
@@ -1615,126 +1915,40 @@ header {
     color: #bbb;
 }
 
-/* Responsive Navbar Styles - Mobile Dropdown */
-@media (max-width: 991.98px) {
-    .navbar-collapse {
-        position: absolute;
-        top: 100%;
-        left: 0;
-        right: 0;
-        z-index: 1000;
-        padding: 0.5rem 1rem;
-        background-color: var(--dark);
-    }
-    
-    .navbar-nav {
-        padding: 1rem 0;
-    }
-    
-    .navbar-nav .nav-item {
-        margin: 0.5rem 0;
-        text-align: center;
-    }
-    
-    .navbar-nav .nav-link {
-        padding: 0.5rem 1rem;
-    }
-    
-    /* Position the buy now button centered */
-    .navbar-collapse .btn-primary {
-        margin: 1rem auto;
-        display: block;
-        width: fit-content;
-    }
-}
-
-/* Dashboard Header Responsive Fixes */
-@media (max-width: 767.98px) {
-    .dashboard-header {
-        flex-direction: column;
-        padding: 1.2rem 1rem;
-    }
-    
-    .dashboard-title {
-        margin-bottom: 1rem;
-        width: 100%;
-        text-align: center;
-    }
-    
-    .dashboard-nav {
-        width: 100%;
-        justify-content: center;
-        flex-wrap: wrap;
-        gap: 5px;
-    }
-    
-    .nav-item {
-        margin-left: 0;
-        margin-right: 5px;
-        padding: 0.3rem 0.6rem;
-        font-size: 0.9rem;
-        text-align: center;
-    }
-    
-    .nav-item:last-child {
-        margin-right: 0;
-    }
-}
-
 /* Responsive Adjustments */
-@media (max-width: 991.98px) {
-    .navbar {
-        padding: 0.5rem 0;
+@media (max-width: 767.98px) {
+    /* Mobile footer centering */
+    .footer {
+        text-align: center;
     }
     
-    .hero {
-        padding: 120px 0 60px;
+    .footer-brand h5::after,
+    .footer h5::after {
+        left: 50%;
+        transform: translateX(-50%);
     }
     
-    .section-title {
-        font-size: 2rem;
+    .social-links {
+        justify-content: center;
     }
     
-    .dashboard-container {
-        margin: 0 15px;
-    }
-    
-    .dashboard-row {
-        flex-direction: column;
-    }
-    
-    .dashboard-card {
-        margin-right: 0;
-        margin-bottom: 1.5rem;
-    }
-    
-    .dashboard-card:last-child {
-        margin-bottom: 0;
-    }
-    
-    .addon-logo {
-        width: 150px;
-        min-width: 150px;
-    }
-    
-    .team-member-card {
-        margin-bottom: 2rem;
-    }
-    
-    /* Stack the last two members on mobile */
-    .row.team-row .col-md-6.col-lg-4:nth-last-child(1):nth-child(5),
-    .row.team-row .col-md-6.col-lg-4:nth-last-child(2):nth-child(4) {
-        max-width: 100%;
-        margin: 0 auto;
+    .footer-links,
+    .contact-info {
+        text-align: center;
     }
 }
 
+/* Ensure navbar stays fixed at top */
+header.fixed-top {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 1030;
+}
+
+/* Responsive adjustments for various sections */
 @media (max-width: 767.98px) {
-    .py-6 {
-        padding-top: 4rem;
-        padding-bottom: 4rem;
-    }
-    
     .hero {
         text-align: center;
     }
@@ -1777,104 +1991,16 @@ header {
         height: 120px;
     }
     
-    .team-member-image {
-        height: 350px; /* Taller on mobile */
-    }
-    
-    /* Adjust team member info for mobile */
-    .team-member-info {
-        padding: 1.2rem;
-    }
-    
-    /* Make social links display properly on mobile */
-    .team-social {
-        padding: 10px 1.2rem;
-        margin-left: -1.2rem;
-        margin-right: -1.2rem;
-        justify-content: flex-start;
-        overflow-x: visible;
-    }
-    
-    .team-social-link {
-        width: 38px;
-        height: 38px;
-        font-size: 1.1rem;
-    }
-}
-
-/* Additional mobile fixes */
-@media (max-width: 380px) {
-    .team-social {
-        justify-content: flex-start; /* Start from left on small screens */
-        padding-left: 1rem;
-        padding-right: 1rem;
-        margin-left: -1rem;
-        margin-right: -1rem;
-        gap: 8px; /* Even smaller gap on very small screens */
-    }
-    
-    .team-member-bio {
-        max-height: 150px; /* Less space for bio on small screens */
-    }
-    
-    .team-social-link {
-        width: 36px; /* Even smaller on very small screens */
-        height: 36px;
-        font-size: 1rem;
-    }
-    
-    .team-member-info {
-        padding: 1rem; /* Reduced padding */
-    }
-    
+    /* Fix for dashboard nav spacing */
     .dashboard-nav {
-        gap: 2px;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        margin-top: 10px;
+        width: 100%;
     }
     
     .nav-item {
-        font-size: 0.8rem;
-        padding: 0.3rem 0.4rem;
-    }
-}
-
-/* iPhone-specific fixes */
-@media screen and (max-width: 767px) and (-webkit-min-device-pixel-ratio: 2), 
-       screen and (max-width: 767px) and (min-resolution: 192dpi) {
-    .team-social {
-        position: relative;
-        display: flex;
-        justify-content: flex-start;
-        flex-wrap: nowrap;
-        overflow: visible;
-        padding-left: 1rem;
-        padding-right: 1rem;
-        gap: 8px;
-        width: calc(100% + 2rem);
-        margin-left: -1rem;
-        margin-right: -1rem;
-        background-color: white;
-        z-index: 5;
-    }
-    
-    .team-social-link {
-        width: 36px;
-        height: 36px;
-        font-size: 1rem;
-        display: inline-flex;
-        margin-right: 0;
-        position: relative;
-        z-index: 2;
-        transform: translateZ(0);
-    }
-    
-    .team-member-info {
-        display: flex;
-        flex-direction: column;
-        position: relative;
-        padding: 1rem;
-    }
-    
-    .team-member-card {
-        overflow: visible;
+        margin: 0 10px 10px 0;
+        font-size: 0.9rem;
     }
 }
